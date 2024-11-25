@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context crossContext="true">
+	<Resource name="jdbc/MiAu_Dote" auth="Container"
+    	type="javax.sql.DataSource"
+    	maxTotal = "100" minIdle="10" maxIdle="30" maxWaitMillis="10000"
+    	username="root" password="12345678"
+    	driverClassName="com.mysql.cj.jdbc.Driver"
+    	url="jdbc:mysql://localhost:3306/MiAu_Dote" />
+</Context>
