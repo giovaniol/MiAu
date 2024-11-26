@@ -1,49 +1,40 @@
 package model;
 
-public class Adotante {
-    private String nome;
-    private String email;
-    private String telefone;
-    private String senha;
+public class Adotante extends Pessoa {
     private String cpf;
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-    public String getCpf() {
+    public String getCpf(){
         return cpf;
+
     }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public static class Builder extends Pessoa.PessoaBuilder<Builder> {
+        private String cpf;
+
+        public Builder cpf(String cpf) {
+            this.cpf = cpf;
+            return this;
+        }
+
+        @Override
+        protected Builder self() {
+            return this;
+        }
+
+        @Override
+        public Adotante build() {
+            Adotante adotante = new Adotante();
+            adotante.setNome(nome);
+            adotante.setEmail(email);
+            adotante.setSenha(senha);
+            adotante.setTelefone(telefone);
+            adotante.setEndereco(endereco);
+            adotante.cpf = cpf;
+            return adotante;
+        }
     }
 }

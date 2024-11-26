@@ -1,22 +1,8 @@
 package model;
 
-public class Abrigo {
-    private String nome;
+public class Abrigo extends Pessoa {
     private String cnpj;
-    private String nomeResponsavel;
-    private String telefone;
-    private String email;
-    private String senha;
 
-
-    public String getNome() {
-
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public String getCnpj() {
         return cnpj;
@@ -26,36 +12,29 @@ public class Abrigo {
         this.cnpj = cnpj;
     }
 
-    public String getNomeResponsavel() {
-        return nomeResponsavel;
-    }
+    public static class Builder extends Pessoa.PessoaBuilder<Builder> {
+        private String cnpj;
 
-    public void setNomeResponsavel(String nomeResponsavel) {
-        this.nomeResponsavel = nomeResponsavel;
-    }
+        public Builder cnpj(String cnpj) {
+            this.cnpj = cnpj;
+            return this;
+        }
 
-    public String getTelefone() {
-        return telefone;
-    }
+        @Override
+        protected Builder self() {
+            return this;
+        }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
+        @Override
+        public Abrigo build() {
+            Abrigo abrigo = new Abrigo();
+            abrigo.setNome(nome);
+            abrigo.setEmail(email);
+            abrigo.setSenha(senha);
+            abrigo.setTelefone(telefone);
+            abrigo.setEndereco(endereco);
+            abrigo.cnpj = cnpj;
+            return abrigo;
+        }
     }
 }
-

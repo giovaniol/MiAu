@@ -17,7 +17,7 @@ public class LoginHelper implements Helper {
 //        String email = req.getParameter("email");
 //        String password = req.getParameter("password");
 //        PessoasDao userDao = new PessoasDao(DataSourceSearcher.getInstance().getDataSource());
-//        Optional<User> optional = PessoasDao.getUserByEmailAndPassword(email, password);
+//        Optional<User> optional = PessoasDao.puxarEmaileSenha(email, password);
 //        if(optional.isPresent()) {
 //            User user = optional.get();
 //            HttpSession session = req.getSession();
