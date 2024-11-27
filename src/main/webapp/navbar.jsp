@@ -44,7 +44,7 @@
                     </li>
 
                 </ul>
-                </ul>
+                <button id="switchTheme" class="btn btn-dark">Trocar Tema</button>
             </div>
         </div>
     </nav>

@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 public abstract class Pessoa {
     private int id;
     private String nome;
@@ -7,7 +9,16 @@ public abstract class Pessoa {
     private String telefone;
     private String senha;
     private Endereco endereco;
+    private List<Animal> animals;
 
+
+    public List<Animal> getAnimals() {
+        return animals;
+    }
+
+    public void setAnimals(List<Animal> animals) {
+        this.animals = animals;
+    }
 
     public Endereco getEndereco() {
         return endereco;

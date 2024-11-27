@@ -2,12 +2,14 @@ package Servlets.Helpers;
 
 
 import dao.PessoasDao;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import model.Endereco;
 import utils.DataSourceSearcher;
 import utils.EncriptadorDeSenha;
 
+@WebServlet("/AdicionarPessoa")
 public class AddPessoaHelper implements Helper {
 
 
